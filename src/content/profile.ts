@@ -5,7 +5,7 @@ export const profile = profileSchema.parse({
   wordmark: 'MD Wasim Akram',
   location: 'Bengaluru, India',
   eyebrow: 'Digital workspace · Endpoint management',
-  role: 'Associate VMware Workspace ONE Administrator',
+  role: 'Omnissa VMware Workspace ONE Administrator',
   pitch:
     'Designing secure, automated and effortless digital workspaces. Currently at Boeing, Bengaluru — previously Insight and Wipro, with deep expertise in UEM, MDM and identity integration.',
   about:
