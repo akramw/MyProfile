@@ -5,8 +5,7 @@ export const profile = profileSchema.parse({
   wordmark: 'MD Wasim Akram',
   location: 'Bengaluru, India',
 
-  eyebrow:
-    'ENTERPRISE MOBILITY · MODERN ENDPOINT MANAGEMENT · AUTOMATION',
+  eyebrow: 'ENTERPRISE MOBILITY · MODERN ENDPOINT MANAGEMENT · AUTOMATION',
 
   role: 'Enterprise Mobility & Endpoint Management Engineer',
 
