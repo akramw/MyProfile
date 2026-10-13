@@ -1,0 +1,62 @@
+.stack {
+  display: grid;
+  gap: var(--s4);
+}
+.proj {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--s7);
+  align-items: start;
+}
+.proj h3 {
+  font: 600 clamp(24px, 3.6vw, 34px) / 1.15 var(--sans);
+  letter-spacing: -0.025em;
+}
+.d {
+  margin-top: var(--s4);
+  color: var(--text-muted);
+}
+.cta {
+  margin-top: var(--s5);
+}
+.run {
+  display: grid;
+  gap: var(--s4);
+}
+.run li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: var(--s4);
+  align-items: start;
+}
+.n {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  background: rgba(255, 255, 255, 0.12);
+  font: 500 13px/1 var(--mono);
+  transition: background 0.4s calc(var(--i) * 0.22s + 0.2s), color 0.4s calc(var(--i) * 0.22s + 0.2s);
+}
+.in .n {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.run b {
+  display: block;
+  font: 600 15px/1.4 var(--sans);
+}
+.run li div span {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+@media (max-width: 860px) {
+  .proj {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s6);
+  }
+}

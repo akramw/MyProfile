@@ -1,0 +1,19 @@
+.card {
+  position: relative;
+  padding: var(--s6);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .card {
+    background: var(--glass-strong);
+  }
+}
+@media (max-width: 520px) {
+  .card {
+    padding: var(--s5);
+  }
+}

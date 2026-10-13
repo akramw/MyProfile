@@ -1,0 +1,145 @@
+/* marquee ribbon of platforms */
+.marquee {
+  margin-bottom: var(--s6);
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.track {
+  display: flex;
+  width: max-content;
+  animation: slide 40s linear infinite;
+}
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+.run {
+  display: flex;
+  flex: none;
+}
+.run li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s4) var(--s5);
+  font: 500 14px/1 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.run li::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  margin-left: var(--s5);
+  border-radius: 50%;
+  background: var(--accent);
+}
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* filter chips */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin-bottom: var(--s5);
+}
+.chip {
+  height: 38px;
+  padding: 0 var(--s4);
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  background: transparent;
+  font: 500 14px/1 var(--sans);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s var(--ease);
+}
+.chip:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+.chipOn,
+.chipOn:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+/* group cards */
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s4);
+}
+.single {
+  grid-template-columns: minmax(0, 1fr);
+}
+.card {
+  position: relative;
+  padding: var(--s6);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: border-color 0.25s, opacity 0.75s var(--ease), transform 0.75s var(--ease);
+}
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0), rgba(255, 255, 255, 0.2), transparent 62%);
+}
+.card:hover {
+  border-color: #fff;
+}
+.card:hover::after {
+  opacity: 1;
+}
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  margin-bottom: var(--s5);
+}
+.cardHead h3 {
+  font: 600 18px/1.3 var(--sans);
+}
+.badge {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-md);
+  background: #fff;
+  color: var(--on-light);
+  transition: transform 0.4s var(--ease);
+}
+.card:hover .badge {
+  transform: rotate(-8deg) scale(1.08);
+}
+.count {
+  margin-left: auto;
+  font: 500 12px/1 var(--mono);
+  color: var(--text-muted);
+}
+@media (max-width: 980px) {
+  .groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

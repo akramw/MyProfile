@@ -1,0 +1,17 @@
+.section {
+  padding-top: var(--s9);
+}
+.head {
+  margin-bottom: var(--s7);
+}
+.head h2 {
+  font: 600 clamp(36px, 6.4vw, 76px) / 1.02 var(--sans);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.sub {
+  margin-top: var(--s4);
+  max-width: 56ch;
+  font-size: 18px;
+  color: var(--text-muted);
+}
