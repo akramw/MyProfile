@@ -55,3 +55,18 @@
     transform: none;
   }
 }
+
+/* real brand logos: white by default, brand colour on hover */
+.logo {
+  display: inline-grid;
+  width: 16px;
+  height: 16px;
+  transition: color 0.25s, transform 0.35s var(--ease);
+}
+.tag:hover .logo {
+  color: var(--brand);
+  transform: rotate(-12deg) scale(1.2);
+}
+.primary:hover .logo {
+  color: inherit;
+}

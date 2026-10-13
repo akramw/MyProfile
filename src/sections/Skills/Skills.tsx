@@ -2,6 +2,7 @@ import { useState, type PointerEvent } from 'react';
 import { skills } from '@/content';
 import { SectionShell, TagList } from '@/components';
 import { SkillIcon } from '@/components/ui/SkillIcon';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { useReveal } from '@/hooks/useReveal';
 import { cn } from '@/lib/cn';
 import type { SkillGroup } from '@/schemas';
@@ -49,7 +50,13 @@ export function Skills() {
             <ul key={n} className={s.run}>
               {platforms.map((p) => (
                 <li key={p.name}>
-                  <SkillIcon name={p.icon} size={18} />
+                  {p.brand ? (
+                    <span className={s.mlogo}>
+                      <BrandLogo name={p.brand} />
+                    </span>
+                  ) : (
+                    <SkillIcon name={p.icon} size={18} />
+                  )}
                   {p.name}
                 </li>
               ))}

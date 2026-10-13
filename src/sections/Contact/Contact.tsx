@@ -30,8 +30,8 @@ export function Contact() {
         <div className={s.soc}>
           {socials.map((so, i) => (
             <LinkButton key={so.label} href={so.href} variant={i === 0 ? 'primary' : 'ghost'}>
+              <Icon name={so.label === 'GitHub' ? 'github' : 'linkedin'} />
               {so.label}
-              <Icon name="ext" />
             </LinkButton>
           ))}
           <LinkButton href={`mailto:${profile.email}`}>

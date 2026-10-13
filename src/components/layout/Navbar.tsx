@@ -56,6 +56,12 @@ export function Navbar({ items }: { items: readonly NavItem[] }) {
     <>
     <header className={cn(s.nav, solid && !open && s.solid)}>
       <div className={cn('wrap xl', s.in)}>
+        <a className={s.logo} href="#hero" aria-label="Home" onClick={close}>
+          <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <rect width="32" height="32" rx="8" />
+            <path d="M7 10l4.5 12L16 13l4.5 9L25 10" />
+          </svg>
+        </a>
         <ul className={s.links}>{links}</ul>
         <button
           type="button"

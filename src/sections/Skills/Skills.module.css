@@ -143,3 +143,9 @@
     animation: none;
   }
 }
+
+.mlogo {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+}

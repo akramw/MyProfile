@@ -1,13 +1,25 @@
 import type { CSSProperties } from 'react';
 import { cn } from '@/lib/cn';
 import type { SkillItem } from '@/schemas';
+import { BrandLogo, brandColor } from './BrandLogo';
 import { SkillIcon } from './SkillIcon';
 import s from './Tag.module.css';
 
 export function Tag({ item, primary, index = 0 }: { item: SkillItem; primary?: boolean; index?: number }) {
+  const style = {
+    ['--i' as string]: index,
+    ...(item.brand ? { ['--brand' as string]: brandColor(item.brand) } : {}),
+  } as CSSProperties;
+
   return (
-    <span className={cn(s.tag, primary && s.primary)} style={{ ['--i' as string]: index } as CSSProperties}>
-      <SkillIcon name={item.icon} />
+    <span className={cn(s.tag, primary && s.primary, item.brand && s.branded)} style={style}>
+      {item.brand ? (
+        <span className={s.logo}>
+          <BrandLogo name={item.brand} />
+        </span>
+      ) : (
+        <SkillIcon name={item.icon} />
+      )}
       {item.name}
     </span>
   );

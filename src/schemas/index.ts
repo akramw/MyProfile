@@ -40,6 +40,7 @@ export type Step = z.infer<typeof stepSchema>;
 
 export const projectSchema = z.object({
   id: z.string(),
+  logo: z.enum(['vmware']).optional(),
   company: z.string(),
   date: z.string(),
   title: z.string(),
@@ -56,7 +57,13 @@ export const skillIcons = [
 ] as const;
 export type SkillIconName = (typeof skillIcons)[number];
 
-export const skillItemSchema = z.object({ name: z.string(), icon: z.enum(skillIcons) });
+export const skillBrands = ['vmware', 'android', 'apple', 'linux', 'git', 'jira', 'virtualbox', 'gnubash'] as const;
+
+export const skillItemSchema = z.object({
+  name: z.string(),
+  icon: z.enum(skillIcons),
+  brand: z.enum(skillBrands).optional(),
+});
 export type SkillItem = z.infer<typeof skillItemSchema>;
 
 export const skillGroupSchema = z.object({

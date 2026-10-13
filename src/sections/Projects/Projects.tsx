@@ -1,5 +1,6 @@
 import { projects } from '@/content';
 import { Card, Icon, LinkButton, SectionShell } from '@/components';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 import { useReveal } from '@/hooks/useReveal';
 import { cn } from '@/lib/cn';
 import s from './Projects.module.css';
@@ -28,6 +29,11 @@ export function Projects() {
         {projects.map((p) => (
           <Card key={p.id} className={s.proj}>
             <div>
+              {p.logo && (
+                <span className={s.badge}>
+                  <BrandLogo name={p.logo} />
+                </span>
+              )}
               <p className="eyebrow">
                 {p.company} · {p.date}
               </p>

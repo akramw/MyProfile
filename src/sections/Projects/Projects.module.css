@@ -60,3 +60,15 @@
     gap: var(--s6);
   }
 }
+
+.badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: var(--s4);
+  padding: 12px;
+  border-radius: var(--r-md);
+  background: #fff;
+  color: #607078;
+}

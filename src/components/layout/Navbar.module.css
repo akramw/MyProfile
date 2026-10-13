@@ -22,7 +22,6 @@
 .links {
   display: flex;
   flex: 1;
-  margin-left: 40px; /* balances the menu button so the links stay centred */
   justify-content: space-around;
   margin-inline: clamp(24px, 5vw, 80px);
 }
@@ -100,4 +99,30 @@
   .links {
     display: none;
   }
+}
+
+/* monogram mark, same size as the menu button so the links stay centred */
+.logo {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s var(--ease);
+}
+.logo:hover {
+  transform: rotate(-6deg) scale(1.08);
+}
+.logo rect {
+  fill: var(--accent);
+}
+.logo path {
+  fill: none;
+  stroke: var(--accent-ink);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.logo svg {
+  width: 34px;
+  height: 34px;
 }

@@ -7,7 +7,7 @@ export const experience = experienceSchema.array().parse([
     company: 'Boeing',
     location: 'Bengaluru',
     mark: 'B',
-    logoSrc: '/logos/boeing.svg',
+    logoSrc: `${import.meta.env.BASE_URL}logos/boeing.svg`,
     start: '2023-12',
     end: null,
     summary:
@@ -18,7 +18,7 @@ export const experience = experienceSchema.array().parse([
     role: 'Mobility Engineer',
     company: 'Insight',
     mark: 'I',
-    logoSrc: '/logos/insight.png',
+    logoSrc: `${import.meta.env.BASE_URL}logos/insight.png`,
     start: '2022-01',
     end: '2023-12',
     summary:
@@ -29,7 +29,7 @@ export const experience = experienceSchema.array().parse([
     role: 'MDM Administrator',
     company: 'Wipro',
     mark: 'W',
-    logoSrc: '/logos/wipro.svg',
+    logoSrc: `${import.meta.env.BASE_URL}logos/wipro.svg`,
     start: '2017-10',
     end: '2022-01',
     summary:

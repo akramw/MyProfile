@@ -5,3 +5,27 @@
   font: 400 13px/1.5 var(--mono);
   color: var(--text-muted);
 }
+
+.in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--s5);
+}
+.right a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.right a:hover {
+  color: var(--accent);
+}

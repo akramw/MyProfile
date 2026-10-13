@@ -3,6 +3,7 @@ import { projectSchema } from '@/schemas';
 export const projects = projectSchema.array().parse([
   {
     id: 'ws1-upgrade',
+    logo: 'vmware',
     company: 'Wipro',
     date: 'Dec 2021',
     title: 'Workspace ONE UEM upgrade and inter-migration',
