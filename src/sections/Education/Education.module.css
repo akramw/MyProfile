@@ -1,19 +1,51 @@
-.logo {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
+.section {
+  padding-top: var(--s7);
 }
 
-.edu a {
-  text-decoration: none;
-  color: inherit;
+.edu {
+  max-width: 760px;
+  padding: 0; /* Remove padding from card so the link covers the whole area */
+}
+
+.link {
   display: flex;
   align-items: center;
   gap: var(--s4);
+  padding: var(--s4); /* Add padding back here for the click area */
+  text-decoration: none;
+  color: inherit;
   width: 100%;
 }
 
-.edu a:hover .mark {
-  background: rgb(var(--tint-rgb) / 0.24);
+.mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-md);
+  background: rgb(var(--tint-rgb) / 0.16);
+  border: 1px solid var(--line);
+  overflow: hidden; /* Ensures logo stays inside rounded corners */
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edu h3 {
+  font: 600 18px/1.3 var(--sans);
+}
+
+.edu p {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+/* Optional: add a hover effect to show it's clickable */
+.link:hover .mark {
   border-color: var(--accent);
+  background: rgb(var(--tint-rgb) / 0.25);
 }
