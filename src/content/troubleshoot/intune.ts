@@ -7,20 +7,22 @@ export const intune = platformSchema.parse({
   tagline: 'Enrollment, compliance, app deployment and Conditional Access — what to check first.',
   troubleshooter: intuneEnrollment,
   articles: [
-    {
-      id: 'enrollment-failed',
-      title: 'Device enrollment fails',
-      summary: 'Android or iOS device cannot complete enrollment into Intune.',
-      tags: ['Enrollment', 'Android', 'iOS'],
-      steps: [
-        'Confirm the user has an Intune license and is in the correct enrollment group.',
-        'Check Devices > Enrollment restrictions for platform, ownership and device limit blocks.',
-        'For iOS, verify the Apple MDM push certificate has not expired.',
-        'For Android Enterprise, confirm the managed Google Play account is still bound.',
-        'Review Devices > Monitor > Enrollment failures for the exact error code.',
-      ],
-      fix: 'Remove the stale device record, clear Company Portal data, and re-enroll.',
-    },
+   {
+  id: 'enrollment-failed',
+  title: 'Device enrollment fails',
+  summary: 'Android or iOS device cannot complete enrollment into Intune.',
+  tags: ['Enrollment', 'Android', 'iOS'],
+  errorCode: 'Common errors: 0x80180014, 0x80180002, 0x87D1313C',
+  steps: [
+    'Confirm the user has an Intune license and is in the correct enrollment group.',
+    'Check Devices > Enrollment restrictions for platform, ownership and device limit blocks.',
+    'For iOS, verify the Apple MDM push certificate has not expired.',
+    'For Android Enterprise, confirm the managed Google Play account is still bound.',
+    'Review Devices > Monitor > Enrollment failures for the exact error code.',
+  ],
+  fix: 'Remove the stale device record, clear Company Portal data, and re-enroll.',
+},
+
     {
       id: 'compliance-not-reporting',
       title: 'Compliance status stuck on "Not evaluated"',
