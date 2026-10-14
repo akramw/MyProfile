@@ -56,7 +56,7 @@ export const jamf = platformSchema.parse({
         'Verify FileVault configuration payload exists under Computers > Configuration Profiles.',
         'If the Mac was already FileVault-encrypted prior to enrollment, temporarily disable FileVault via System Settings.',
         'Re-enable FileVault through a Jamf policy or command to force generation of a new Personal Recovery Key (PRK).',
-        'Confirm the PRK is escrow'd in Jamf Pro device details.',
+        'Confirm the PRK is escrowed in Jamf Pro device details.',
       ],
       fix: 'Create and deploy a FileVault policy to generate and escrow a new recovery key after disabling existing encryption.',
     },
