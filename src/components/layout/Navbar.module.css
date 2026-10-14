@@ -23,7 +23,12 @@
   display: flex;
   flex: 1;
   justify-content: space-around;
+  align-items: center;
   margin-inline: clamp(24px, 5vw, 80px);
+}
+.links > li {
+  display: flex;
+  align-items: center;
 }
 .links a,
 .menu a {

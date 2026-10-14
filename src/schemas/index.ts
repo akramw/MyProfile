@@ -98,10 +98,39 @@ export const troubleshootArticleSchema = z.object({
 });
 export type TroubleshootArticle = z.infer<typeof troubleshootArticleSchema>;
 
+export const troubleshooterSchema = z.object({
+  title: z.string(),
+  intro: z.string(),
+  tabs: z
+    .array(
+      z.object({
+        id: z.string(),
+        label: z.string(),
+        heading: z.string(),
+        /** short pre-flight checks shown above the issues */
+        quickChecks: z.array(z.string()).default([]),
+        /** `code` and [text](url) are rendered inline in cause and fix steps */
+        items: z
+          .array(
+            z.object({
+              title: z.string(),
+              tag: z.string(),
+              cause: z.string(),
+              fix: z.array(z.string()).min(1),
+            }),
+          )
+          .min(1),
+      }),
+    )
+    .min(1),
+});
+export type Troubleshooter = z.infer<typeof troubleshooterSchema>;
+
 export const platformSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   name: z.string(),
   tagline: z.string(),
+  troubleshooter: troubleshooterSchema.optional(),
   articles: z.array(troubleshootArticleSchema).min(1),
 });
 export type Platform = z.infer<typeof platformSchema>;

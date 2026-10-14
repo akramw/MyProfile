@@ -1,9 +1,11 @@
 import { platformSchema } from '@/schemas';
+import { intuneEnrollment } from './intuneEnrollment';
 
 export const intune = platformSchema.parse({
   id: 'intune',
   name: 'Microsoft Intune',
   tagline: 'Enrollment, compliance, app deployment and Conditional Access — what to check first.',
+  troubleshooter: intuneEnrollment,
   articles: [
     {
       id: 'enrollment-failed',

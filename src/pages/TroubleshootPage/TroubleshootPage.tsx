@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { getPlatform } from '@/content/troubleshoot';
+import { EnrollmentTroubleshooter } from './EnrollmentTroubleshooter';
 import { Card } from '@/components/ui/Card';
 import s from './TroubleshootPage.module.css';
 
@@ -43,6 +44,10 @@ export function TroubleshootPage({ platformId }: { platformId?: string }) {
           {platform.name}
         </h1>
         <p className={s.sub}>{platform.tagline}</p>
+
+        {platform.troubleshooter && (
+          <EnrollmentTroubleshooter key={platform.id} data={platform.troubleshooter} />
+        )}
 
         <label className={s.search}>
           <span className="sr-only">Search {platform.name} guides</span>

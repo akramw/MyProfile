@@ -8,7 +8,7 @@ import { ErrorBoundary, Footer, Navbar } from '@/components';
 import type { NavItem } from '@/components/layout/Navbar';
 
 const troubleshootGroup: NavItem = {
-  label: 'Troubleshoot',
+  label: 'Products',
   children: platforms.map((p) => ({ label: p.name, href: troubleshootHref(p.id) })),
 };
 
