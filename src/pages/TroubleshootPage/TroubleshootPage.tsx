@@ -66,27 +66,42 @@ export function TroubleshootPage({ platformId }: { platformId?: string }) {
             {articles.map((a, i) => (
               <li key={`${platform.id}-${a.id}`}>
                 <Card as="article" delay={i * 0.05} className={s.article}>
-                  {a.errorCode && <p className={s.errorCode}>{a.errorCode}</p>}
-                  <h2>{a.title}</h2>
-                  <p className={s.summary}>{a.summary}</p>
-                  {a.tags.length > 0 && (
-                    <ul className={s.tags}>
-                      {a.tags.map((t) => (
-                        <li key={t}>{t}</li>
-                      ))}
-                    </ul>
-                  )}
-                  <ol className={s.steps}>
-                    {a.steps.map((step) => (
-                      <li key={step}>{step}</li>
-                    ))}
-                  </ol>
-                  {a.fix && (
-                    <p className={s.fix}>
-                      <b>Resolution:</b> {a.fix}
-                    </p>
-                  )}
-                </Card>
+  {/* Error code badge (uses .errorCode) */}
+  {('errorCode' in a && a.errorCode) && (
+    <div className={s.errorCode}>{a.errorCode}</div>
+  )}
+
+  <h2>{a.title}</h2>
+  <p className={s.summary}>{a.summary}</p>
+
+  {a.tags.length > 0 && (
+    <ul className={s.tags}>
+      {a.tags.map((t) => (
+        <li key={t}>{t}</li>
+      ))}
+    </ul>
+  )}
+
+  {/* Optional structured error details block (uses .errorItem) */}
+  {/* If later you add something like a.errorDetails, you can render it here */}
+  {/* <div className={s.errorItem}>
+    <h4>Details</h4>
+    <p>{a.errorDetails}</p>
+  </div> */}
+
+  <ol className={s.steps}>
+    {a.steps.map((step) => (
+      <li key={step}>{step}</li>
+    ))}
+  </ol>
+
+  {a.fix && (
+    <p className={s.fix}>
+      <b>Resolution:</b> {a.fix}
+    </p>
+  )}
+</Card>
+
               </li>
             ))}
           </ul>
