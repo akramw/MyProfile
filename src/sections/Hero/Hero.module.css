@@ -1,68 +1,75 @@
 .hero {
   position: relative;
-  background: #000; /* Pure black background */
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: max(640px, 100svh);
+  min-height: max(620px, 88svh);
+  background:
+    radial-gradient(circle at 72% 34%, rgba(74, 163, 255, 0.16), transparent 26%),
+    radial-gradient(circle at 76% 38%, rgba(255, 255, 255, 0.05), transparent 40%),
+    linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
 }
 
 .inner {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: row-reverse; /* Put image on right, text on left */
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding-top: clamp(80px, 15vh, 120px);
-  width: 100%;
+  gap: clamp(28px, 4vw, 72px);
+  min-height: inherit;
+  padding-top: clamp(92px, 13vh, 132px);
+  padding-bottom: clamp(28px, 5vh, 56px);
+}
+
+.copy {
+  max-width: min(60vw, 720px);
 }
 
 .photo {
-  flex: 1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  min-height: 520px;
 }
 
-/* The circular glowing effect behind the photo */
 .photo::before {
   content: "";
   position: absolute;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(76, 195, 255, 0.25) 0%, transparent 70%);
+  width: clamp(360px, 36vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(90, 175, 255, 0.34) 0%,
+    rgba(90, 175, 255, 0.2) 22%,
+    rgba(90, 175, 255, 0.08) 38%,
+    transparent 68%
+  );
+  filter: blur(20px);
   z-index: 0;
 }
 
 .figure {
   position: relative;
-  width: clamp(300px, 35vw, 500px);
-  aspect-ratio: 1 / 1;
+  width: clamp(300px, 32vw, 500px);
+  aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
-  /* Circular mask with soft edges */
-  mask-image: radial-gradient(circle, black 60%, transparent 100%);
-  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
-  animation: in 1.4s var(--ease) 0.15s both;
   z-index: 1;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 38px rgba(90, 175, 255, 0.18),
+    0 0 110px rgba(90, 175, 255, 0.08);
+  animation: in 1.15s var(--ease) 0.1s both;
 }
 
 .portrait {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the photo fills the circle */
-  filter: contrast(1.1); /* Slight boost to match the sharp look */
-}
-
-.copy {
-  flex: 1;
-  max-width: 600px;
-  text-align: left;
-  z-index: 2;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(1) contrast(1.18) brightness(0.9);
 }
 
 .eyebrow {
@@ -75,63 +82,86 @@
 }
 
 .name {
-  font: 700 clamp(40px, 8vw, 85px) / 1.05 var(--sans);
-  letter-spacing: -0.04em;
+  white-space: nowrap;
+  font: 700 clamp(44px, 7.3vw, 88px) / 0.96 var(--sans);
+  letter-spacing: -0.055em;
   color: #fff;
   animation: fade 0.9s var(--ease) 0.2s both;
 }
 
 .role {
-  margin: 22px 0 18px;
-  font-size: clamp(20px, 2.5vw, 28px);
+  margin: 18px 0 16px;
+  font-size: clamp(18px, 2.2vw, 26px);
   font-weight: 500;
   line-height: 1.25;
-  color: #fff;
-  animation: fade 0.8s var(--ease) 0.4s both;
+  color: #f1f1f1;
+  animation: fade 0.8s var(--ease) 0.35s both;
 }
 
 .lede {
-  max-width: 32em;
-  font: 400 clamp(14px, 1.5vw, 18px) / 1.6 var(--sans);
-  color: #a1a1aa;
-  animation: fade 0.8s var(--ease) 0.55s both;
+  max-width: 34em;
+  font: 400 clamp(14px, 1.35vw, 17px) / 1.6 var(--sans);
+  color: #a9a9b3;
+  animation: fade 0.8s var(--ease) 0.5s both;
 }
 
 .cta {
   display: flex;
   flex-wrap: wrap;
   gap: var(--s3);
-  margin-top: var(--s8);
-  animation: fade 0.8s var(--ease) 0.7s both;
+  margin-top: var(--s7);
+  animation: fade 0.8s var(--ease) 0.65s both;
 }
 
 @keyframes in {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes fade {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Mobile Responsive */
 @media (max-width: 860px) {
   .inner {
-    flex-direction: column-reverse; /* Stack image on top of text for mobile */
-    text-align: center;
-    padding-top: 60px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 92px;
+    padding-bottom: 36px;
   }
-  .copy {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  .photo {
+    order: -1;
+    min-height: auto;
   }
-  .cta {
-    justify-content: center;
-  }
+
   .figure {
-    width: 280px;
+    width: min(74vw, 340px);
+  }
+
+  .photo::before {
+    width: min(84vw, 420px);
+  }
+
+  .copy {
+    max-width: 100%;
+  }
+
+  .name {
+    white-space: normal;
+    font-size: clamp(36px, 11vw, 72px);
   }
 }
