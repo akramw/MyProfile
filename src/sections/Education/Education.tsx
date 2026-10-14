@@ -1,18 +1,23 @@
 import { education } from '@/content';
-import { Card, Icon } from '@/components';
+import { Card } from '@/components';
 import s from './Education.module.css';
 
 export function Education() {
   return (
     <section id="education" className={s.section} aria-label="Education">
       <div className="wrap">
-        <Card>
-          <a href="https://makautwb.ac.in/" target="_blank" rel="noopener noreferrer" className={s.edu}>
+        <Card className={s.edu}>
+          <a 
+            href="https://makautwb.ac.in/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={s.link}
+          >
             <div className={s.mark}>
               <img 
-                src="public/MAKAUT-Kolkata-Logo.png" 
-                alt="Maulana Abul Kalam Azad University of Technology"
-                className={s.logo}
+                src="/MAKAUT-Kolkata-Logo.png" 
+                alt="MAKAUT Logo" 
+                className={s.logo} 
               />
             </div>
             <div>
