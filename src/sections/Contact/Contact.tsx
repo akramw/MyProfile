@@ -13,7 +13,7 @@ export function Contact() {
     <section id="contact" className={s.section} aria-labelledby="contact-title">
       <div ref={ref} className={cn('wrap xl', 'reveal', shown && 'shown')}>
         <p className="eyebrow">Contact</p>
-        <h2 id="contact-title" className={s.title}>
+        <h2 id="contact-title" className={`grad ${s.title}`}>
           Let&apos;s talk.
         </h2>
         <p className={s.sub}>Message me on LinkedIn or email me directly.</p>

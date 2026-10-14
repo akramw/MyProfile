@@ -12,10 +12,10 @@
   left: 8%;
   right: 8%;
   top: 32px;
-  height: 2px;
+  height: 1px;
 }
 .flow::before {
-  background: var(--line);
+  background: rgba(74, 163, 255, 0.22);
 }
 .flow::after {
   background: var(--accent);
@@ -34,15 +34,21 @@
   height: 64px;
   margin: 0 auto var(--s3);
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  background: var(--ember-5);
-  font: 500 15px/1 var(--mono);
-  transition: background 0.4s, color 0.4s, transform 0.4s var(--ease);
+  border: 1px solid rgba(74, 163, 255, 0.35);
+  background: #0a0e14;
+  color: var(--accent);
+  transition: background 0.3s, color 0.3s, border-color 0.4s, box-shadow 0.4s, transform 0.4s var(--ease);
+}
+.step:hover .node {
+  background: var(--accent);
+  color: #05080d;
+  border-color: var(--accent);
+  box-shadow: 0 0 22px rgba(74, 163, 255, 0.5);
+  transform: scale(1.08);
 }
 .on .node {
-  background: var(--accent);
-  color: var(--accent-ink);
-  border-color: var(--accent);
+  border-color: rgba(74, 163, 255, 0.8);
+  box-shadow: 0 0 18px rgba(74, 163, 255, 0.35);
   transform: scale(1.06);
 }
 .step b {
@@ -67,7 +73,7 @@
     right: auto;
     top: 32px;
     bottom: 32px;
-    width: 2px;
+    width: 1px;
     height: auto;
   }
   .flow::after {

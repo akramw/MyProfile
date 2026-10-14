@@ -20,7 +20,7 @@ export function SectionShell({ id, eyebrow, title, sub, children, className }: P
         {(eyebrow || title) && (
           <div ref={ref} className={cn(s.head, 'reveal', shown && 'shown')}>
             {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-            {title && <h2 id={`${id}-title`}>{title}</h2>}
+            {title && <h2 id={`${id}-title`} className="grad">{title}</h2>}
             {sub && <p className={s.sub}>{sub}</p>}
           </div>
         )}

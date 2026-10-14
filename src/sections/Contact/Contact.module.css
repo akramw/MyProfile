@@ -4,6 +4,8 @@
 .title {
   font: 500 clamp(64px, 15vw, 200px) / 0.9 var(--sans);
   letter-spacing: -0.05em;
+  width: fit-content;
+  max-width: 100%;
 }
 .sub {
   margin-top: var(--s7);

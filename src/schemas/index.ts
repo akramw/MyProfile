@@ -88,6 +88,24 @@ export const certificationSchema = z.object({
 });
 export type Certification = z.infer<typeof certificationSchema>;
 
+export const troubleshootArticleSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  summary: z.string(),
+  tags: z.array(z.string()).default([]),
+  steps: z.array(z.string()).min(1),
+  fix: z.string().optional(),
+});
+export type TroubleshootArticle = z.infer<typeof troubleshootArticleSchema>;
+
+export const platformSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  name: z.string(),
+  tagline: z.string(),
+  articles: z.array(troubleshootArticleSchema).min(1),
+});
+export type Platform = z.infer<typeof platformSchema>;
+
 export const educationSchema = z.object({
   school: z.string(),
   degree: z.string(),

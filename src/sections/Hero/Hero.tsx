@@ -1,6 +1,11 @@
-import { profile } from '@/content';
+import { experience, profile } from '@/content';
 import { Icon, LinkButton } from '@/components';
 import s from './Hero.module.css';
+
+const boeingStart = experience.find((e) => e.id === 'boeing')?.start;
+const boeingSince = boeingStart
+  ? new Date(`${boeingStart}-01T00:00:00`).toLocaleDateString('en', { month: 'long', year: 'numeric' })
+  : null;
 
 export function Hero() {
   return (
@@ -38,6 +43,7 @@ export function Hero() {
               fetchPriority="high"
             />
           </div>
+          {boeingSince && <p className={s.tenure}>At Boeing since {boeingSince}</p>}
         </div>
       </div>
     </header>
