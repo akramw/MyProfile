@@ -6,21 +6,6 @@ export function Hero() {
   return (
     <header id="hero" className={s.hero}>
       <div className={`wrap xl ${s.inner}`}>
-        {/* Right Side: Photo */}
-        <div className={s.photo}>
-          <div className={s.figure}>
-            <img
-              className={s.portrait}
-              src={profile.photo}
-              alt={`Portrait of ${profile.name}`}
-              width={600}
-              height={600}
-              fetchPriority="high"
-            />
-          </div>
-        </div>
-
-        {/* Left Side: Content */}
         <div className={s.copy}>
           <p className={s.eyebrow}>{profile.eyebrow}</p>
           <h1 className={s.name} aria-label={profile.name}>
@@ -30,7 +15,7 @@ export function Hero() {
           </h1>
           <p className={s.role}>{profile.role}</p>
           <p className={s.lede}>{profile.pitch}</p>
-          
+
           <div className={s.cta}>
             <LinkButton variant="primary" href="#experience">
               Current status
@@ -39,6 +24,19 @@ export function Hero() {
               <Icon name="mail" />
               Get in touch
             </LinkButton>
+          </div>
+        </div>
+
+        <div className={s.photo}>
+          <div className={s.figure}>
+            <img
+              className={s.portrait}
+              src={profile.photo}
+              alt={`Portrait of ${profile.name}`}
+              width={900}
+              height={900}
+              fetchPriority="high"
+            />
           </div>
         </div>
       </div>
