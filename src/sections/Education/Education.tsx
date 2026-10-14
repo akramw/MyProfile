@@ -10,7 +10,7 @@ export function Education() {
           <a href="https://makautwb.ac.in/" target="_blank" rel="noopener noreferrer" className={s.edu}>
             <div className={s.mark}>
               <img 
-                src="/utech-logo.png" 
+                src="public/MAKAUT-Kolkata-Logo.png" 
                 alt="Maulana Abul Kalam Azad University of Technology"
                 className={s.logo}
               />
