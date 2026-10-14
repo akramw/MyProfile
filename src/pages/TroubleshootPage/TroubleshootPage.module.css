@@ -154,3 +154,37 @@
 .steps a {
   color: var(--accent);
 }
+
+.errorCode {
+  display: inline-block;
+  background: rgba(74, 163, 255, 0.1);
+  border-left: 3px solid var(--accent);
+  padding: 8px 12px;
+  margin: var(--s2) 0;
+  border-radius: 4px;
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.errorItem {
+  margin-top: var(--s3);
+  padding: var(--s3);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid var(--hairline);
+}
+
+.errorItem h4 {
+  margin: 0 0 var(--s2) 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.errorItem p {
+  margin: var(--s1) 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+

@@ -60,5 +60,20 @@ export const intune = platformSchema.parse({
       ],
       fix: 'Remove the duplicate setting or deploy the missing dependency profile.',
     },
+    // Add this new article or expand an existing one
+{
+  id: 'ios-enrollment-errors',
+  title: 'iOS enrollment errors – error codes and fixes',
+  summary: 'Troubleshoot common iOS/iPadOS enrollment failures with error codes and remediation.',
+  tags: ['Enrollment', 'iOS', 'Error Codes'],
+  steps: [
+    'Navigate to Intune > Devices > iOS/iPadOS > select device > Device configuration.',
+    'Match the error code (e.g., 0x87D1FDE8, 0x87D1138B) to the troubleshooting guide below.',
+    'Verify minimum OS requirements and remove duplicate payloads.',
+    'Restart the device and trigger a manual Sync from Intune.',
+    'Collect device diagnostics via Settings > Privacy & Security > Analytics & Improvements.',
+  ],
+  fix: 'Confirm APNs certificate is active (Tenant administration > Apple push certificates). Check firewall rules allow TCP 443/8443 to Apple APNs IP block 17.0.0.0/8. Verify device time is synchronized.',
+},
   ],
 });

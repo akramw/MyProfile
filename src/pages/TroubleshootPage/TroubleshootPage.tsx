@@ -65,6 +65,8 @@ export function TroubleshootPage({ platformId }: { platformId?: string }) {
           <ul className={s.list}>
             {articles.map((a, i) => (
               <li key={`${platform.id}-${a.id}`}>
+        {a.errorCode && <div className={s.errorCode}>{a.errorCode}</div>}
+<h2>{a.title}</h2>
                 <Card as="article" delay={i * 0.05} className={s.article}>
                   <h2>{a.title}</h2>
                   <p className={s.summary}>{a.summary}</p>
