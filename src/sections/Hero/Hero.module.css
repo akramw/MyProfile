@@ -6,7 +6,7 @@
     radial-gradient(ellipse 60% 70% at 74% 40%, rgba(76, 195, 255, 0.3), transparent 70%),
     radial-gradient(ellipse 50% 60% at 8% 0%, rgba(76, 195, 255, 0.18), transparent 70%),
     radial-gradient(ellipse 70% 40% at 50% 110%, rgba(76, 195, 255, 0.2), transparent 70%),
-    linear-gradient(180deg, #050b12 0%, #030508 100%);
+    linear-gradient(180deg, var(--hero-a) 0%, var(--hero-b) 100%);
 }
 
 .inner {
@@ -59,7 +59,7 @@
   overflow: hidden;
   z-index: 1;
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 0 1px rgb(var(--tint-rgb) / 0.06),
     0 0 38px rgba(90, 175, 255, 0.18),
     0 0 110px rgba(90, 175, 255, 0.08);
   animation: in 1.15s var(--ease) 0.1s both;
@@ -85,7 +85,7 @@
   font: 600 12px/1.4 var(--mono);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #7cd0ff;
+  color: var(--accent-hero);
   animation: fade 0.8s var(--ease) 0.3s both;
 }
 
@@ -94,7 +94,7 @@
   font: 600 12px/1.4 var(--mono);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #7cd0ff;
+  color: var(--accent-hero);
   animation: fade 0.8s var(--ease) 0.1s both;
 }
 
@@ -102,7 +102,7 @@
   white-space: nowrap;
   font: 700 clamp(44px, 7.3vw, 88px) / 0.96 var(--sans);
   letter-spacing: -0.055em;
-  color: #fff;
+  color: var(--strong);
   animation: fade 0.9s var(--ease) 0.2s both;
 }
 
@@ -111,14 +111,14 @@
   font-size: clamp(18px, 2.2vw, 26px);
   font-weight: 500;
   line-height: 1.25;
-  color: #f1f1f1;
+  color: var(--text);
   animation: fade 0.8s var(--ease) 0.35s both;
 }
 
 .lede {
   max-width: 34em;
   font: 400 clamp(14px, 1.35vw, 17px) / 1.6 var(--sans);
-  color: #a9a9b3;
+  color: var(--text-muted);
   animation: fade 0.8s var(--ease) 0.5s both;
 }
 

@@ -3,6 +3,7 @@ import { profile } from '@/content';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { cn } from '@/lib/cn';
 import { Icon } from '@/components/ui/Icon';
+import { ThemeToggle } from './ThemeToggle';
 import { NavDropdown, type NavChild } from './NavDropdown';
 import s from './Navbar.module.css';
 
@@ -83,6 +84,8 @@ export function Navbar({ items, route }: { items: readonly NavItem[]; route?: st
           </svg>
         </a>
         <ul className={s.links}>{renderLinks('popover')}</ul>
+        <div className={s.actions}>
+        <ThemeToggle />
         <button
           type="button"
           className={s.burger}
@@ -93,6 +96,7 @@ export function Navbar({ items, route }: { items: readonly NavItem[]; route?: st
         >
           <Icon name={open ? 'close' : 'menu'} size={24} />
         </button>
+        </div>
       </div>
       <div className={s.bar} style={{ transform: `scaleX(${progress})` }} />
     </header>

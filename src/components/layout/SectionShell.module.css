@@ -10,7 +10,7 @@
   text-wrap: balance;
   /* shrink the box to the text so the gradient spans the heading, however short */
   /* long headings: start blending sooner so most of the text carries colour */
-  background-image: linear-gradient(90deg, #fff 0%, var(--ac2) 35%, var(--ac) 75%);
+  background-image: linear-gradient(90deg, var(--strong) 0%, var(--ac2) 35%, var(--ac) 75%);
   width: fit-content;
   max-width: 100%;
 }

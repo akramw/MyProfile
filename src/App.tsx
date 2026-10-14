@@ -39,7 +39,7 @@ export default function App() {
       <Navbar items={navItems} route={route} />
       {onTroubleshoot ? (
         <ErrorBoundary name="troubleshoot">
-          <TroubleshootPage platformId={route[1]} />
+          <TroubleshootPage key={route[1]} platformId={route[1]} />
         </ErrorBoundary>
       ) : (
         <main>

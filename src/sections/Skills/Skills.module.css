@@ -60,7 +60,7 @@
   transition: background 0.2s, color 0.2s, transform 0.2s var(--ease);
 }
 .chip:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgb(var(--tint-rgb) / 0.16);
   transform: translateY(-2px);
 }
 .chipOn,
@@ -98,10 +98,10 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
-  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0), rgba(255, 255, 255, 0.2), transparent 62%);
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0), rgb(var(--tint-rgb) / 0.2), transparent 62%);
 }
 .card:hover {
-  border-color: #fff;
+  border-color: var(--strong);
 }
 .card:hover::after {
   opacity: 1;

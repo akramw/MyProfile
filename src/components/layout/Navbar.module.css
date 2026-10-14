@@ -7,7 +7,7 @@
 }
 /* after the hero the bar gets a dark glass fill so links stay readable over content */
 .solid {
-  background: rgba(0, 0, 0, 0.72);
+  background: var(--nav-glass);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
@@ -42,7 +42,7 @@
 }
 .links a:hover,
 .menu a:hover {
-  border-bottom-color: #fff;
+  border-bottom-color: var(--strong);
 }
 .links a[aria-current],
 .menu a[aria-current] {
@@ -60,7 +60,12 @@
   transition: background 0.2s;
 }
 .burger:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgb(var(--tint-rgb) / 0.16);
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
 }
 .bar {
   position: absolute;
@@ -125,7 +130,7 @@
 }
 .ddBtn:hover,
 .ddOpen {
-  border-bottom-color: #fff;
+  border-bottom-color: var(--strong);
 }
 .ddBtn .icon {
   transition: transform 0.2s;
@@ -146,7 +151,7 @@
   padding: var(--s2);
   border: 1px solid var(--hairline);
   border-radius: 14px;
-  background: rgba(10, 14, 20, 0.96);
+  background: var(--pop-bg);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }

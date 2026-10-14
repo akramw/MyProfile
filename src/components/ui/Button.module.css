@@ -15,8 +15,8 @@
   transform: translateY(-2px);
 }
 .primary {
-  background: #fff;
-  color: var(--on-light);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
 }
 .primary:hover {
   background: var(--accent);
@@ -24,11 +24,11 @@
 }
 .ghost {
   background: transparent;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.75);
+  color: var(--strong);
+  border-color: rgb(var(--tint-rgb) / 0.6);
 }
 .ghost:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgb(var(--tint-rgb) / 0.16);
 }
 .sm {
   height: 38px;

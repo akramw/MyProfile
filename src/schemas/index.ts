@@ -92,6 +92,7 @@ export const troubleshootArticleSchema = z.object({
   id: z.string(),
   title: z.string(),
   summary: z.string(),
+  errorCode: z.string().optional(),
   tags: z.array(z.string()).default([]),
   steps: z.array(z.string()).min(1),
   fix: z.string().optional(),

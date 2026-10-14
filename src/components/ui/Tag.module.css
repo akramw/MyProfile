@@ -10,7 +10,7 @@
   padding: 7px var(--s3) 7px 10px;
   border-radius: 999px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgb(var(--tint-rgb) / 0.12);
   font: 500 13px/1.2 var(--sans);
   cursor: default;
   opacity: 0;
@@ -30,8 +30,8 @@
 }
 .tag:hover {
   transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.24);
-  border-color: #fff;
+  background: rgb(var(--tint-rgb) / 0.24);
+  border-color: var(--strong);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 .tag:hover svg {

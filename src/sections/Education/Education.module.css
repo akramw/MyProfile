@@ -14,7 +14,7 @@
   width: 56px;
   height: 56px;
   border-radius: var(--r-md);
-  background: rgba(255, 255, 255, 0.16);
+  background: rgb(var(--tint-rgb) / 0.16);
   border: 1px solid var(--line);
 }
 .edu h3 {

@@ -42,7 +42,7 @@ body::before {
   padding: 10px 16px;
   border-radius: 999px;
   background: var(--text);
-  color: var(--on-light);
+  color: var(--bg);
   font-weight: 600;
   text-decoration: none;
 }

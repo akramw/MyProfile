@@ -11,7 +11,7 @@
   /* gradient pair from the reference: white into pale blue into sky blue */
   --ac: #4cc3ff;
   --ac2: #bfe9ff;
-  --grad: linear-gradient(90deg, #fff 20%, var(--ac2) 60%, var(--ac));
+  --grad: linear-gradient(90deg, var(--strong) 20%, var(--ac2) 60%, var(--ac));
 
   --text: #f5f5f7;
   --text-muted: #a1a1a6;
@@ -25,6 +25,18 @@
   --on-light: #1d1d1f;
   --success: #30d158;
   --focus: var(--accent);
+
+  /* theme-aware helpers used by component styles */
+  color-scheme: dark;
+  --strong: #fff;
+  --tint-rgb: 255 255 255;
+  --nav-glass: rgba(0, 0, 0, 0.72);
+  --pop-bg: rgba(10, 14, 20, 0.96);
+  --btn-bg: #fff;
+  --btn-fg: #1d1d1f;
+  --hero-a: #050b12;
+  --hero-b: #030508;
+  --accent-hero: #7cd0ff;
 
   --sans: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
@@ -42,4 +54,37 @@
   --r-lg: 20px;
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --nav-h: 56px;
+}
+
+/* light theme: toggled via <html data-theme="light"> */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --surface-2: #ececf0;
+  --ember-4: #ffffff;
+  --ember-5: #f5f5f7;
+  --ember-6: #f5f5f7;
+
+  --ac: #0071e3;
+  --ac2: #4aa3ff;
+  --text: #1d1d1f;
+  --text-muted: #5e5e66;
+  --hairline: #c9c9d0;
+  --line: #dcdce2;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-strong: #ffffff;
+  --accent: #0071e3;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(0, 113, 227, 0.12);
+
+  --strong: #0b1220;
+  --tint-rgb: 11 18 32;
+  --nav-glass: rgba(245, 245, 247, 0.78);
+  --pop-bg: rgba(255, 255, 255, 0.97);
+  --btn-bg: #1d1d1f;
+  --btn-fg: #ffffff;
+  --hero-a: #eef5ff;
+  --hero-b: #f5f5f7;
+  --accent-hero: #0071e3;
 }

@@ -36,7 +36,7 @@
   height: 36px;
   border-radius: 50%;
   border: 1px solid var(--hairline);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgb(var(--tint-rgb) / 0.12);
   font: 500 13px/1 var(--mono);
   transition: background 0.4s calc(var(--i) * 0.22s + 0.2s), color 0.4s calc(var(--i) * 0.22s + 0.2s);
 }
